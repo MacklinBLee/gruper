@@ -2,50 +2,46 @@
 
 <html>
 <head>
-	<title>gruper</title>	
+	<title>gruper-main</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
 </head>
 
 <body>	
 
 	<div class="jumbotron">
 		<h1>gruper</h1>
-		<p>Connect and Explore</p>
 	</div>
-	<form id="login" role="form">
-    <div class="form-group">
-      <label for="width">ID/Email:</label>
-      <input type="text" class="form-control" id="width" placeholder="ID/Email">
-    </div>
-    <div class="form-group">
-      <label for="description">Password:</label>
-      <input type="password" class="form-control" id="description" placeholder="Password">
-    </div>
-	<button id="submitBtn" type="button" class="btn btn-default">Login</button>
 	
-	<div><h3>OR</h3></div>
-	<div class="form-group">
-      <label for="width">ID:</label>
-      <input type="text" class="form-control" id="width" placeholder="ID">
-    </div>
-	<div class="form-group">
-      <label for="width">Email:</label>
-      <input type="text" class="form-control" id="width" placeholder="Email">
-    </div>
-    <div class="form-group">
-      <label for="description">Password:</label>
-      <input type="password" class="form-control" id="description" placeholder="Password">
-    </div>
-	<div class="form-group">
-      <label for="description">Re-Type Password:</label>
-      <input type="password" class="form-control" id="description" placeholder="Re-Type Password">
-    </div>
-	<button id="accountBtn" type="button" class="btn btn-default">Create Account</button>
-  </form>
-  
-  <div><h3>OR</h3></div>
-  <div><button id="accountSkip" type="button" class="btn btn-default">Continue As Guest</button></div>
+	<div id="tfheader">
+		<input type="text" name="q" size="21" maxlength="120">
+		<input type="submit" value="search">
+		<input type="submit" value="Login or Create Account">
+	</div>
+	
+	<div id="map"></div>
+	<div><button id="newEvent" type="button" class="btn btn-default">New Event</button></div>
+	
+	
+	
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 44.540, lng: -78.546},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
 
   <script src="https://code.jquery.com/jquery.js"></script>
 </body>
