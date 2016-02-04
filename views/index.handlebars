@@ -6,64 +6,79 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/gruper.css" rel="stylesheet">
+
+
 	<style>
       #map {
-        width: 500px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
       }
     </style>
 </head>
 
-<body>	
+<body>	<center>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>gruper</h1>
+		</div> 
+		<a href="/account"><h3 align="right"> Macklin Lee </h3> </a>
+		<div id="tfheader">
+			<input type="text" name="q" size="21" maxlength="120" placeholder="Search Events"></input>
+			<input type="submit" value="search"> </input>
+		</div>	
+			
+		<div>
+			<a href="/login"><input type="submit" value="Login or Create Account"></a>
+		</div>
+		</br>
+		
+		<div id="map"></div>
+		
+		</br>
+		
+		<div>
+			<a href="/create"> <button id="newEvent" type="button" class="btn btn-default">Create New Event</button></a>
 
-	<div class="jumbotron">
-		<h1>gruper</h1>
+			<a href="/view"> <button id="viewEvent" type="button" class="btn btn-default">Events You've Joined</button></a>
+		</div>
+		
+	    <script>
+	      function initMap() {
+		    var latLongTemp = {lat: 32.881263, lng: -117.237547};
+			
+	        var mapDiv = document.getElementById('map');
+	        var map = new google.maps.Map(mapDiv, {
+	          center: {lat: 32.881263, lng: -117.237547},
+	          zoom: 16
+	        });
+			
+			var infowindow = new google.maps.InfoWindow();
+			
+			var markerTemp = new google.maps.Marker({
+				map: map,
+				position: latLongTemp,
+				title: 'gruper Meeting'
+			});
+			
+			google.maps.event.addListener(markerTemp, 'click', function() {
+				infowindow.setContent('<div><strong>' + "gruper Meeting" + '</strong><br>' +
+				"2/2/2016 at 2pm" + '<br>' +
+				"Free" + '</div>' + '<input type="submit" value="View">');
+				infowindow.open(map, this);
+			});
+	      }
+	    </script>
+	    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+	        async defer></script>
 	</div>
-	
-	<div id="tfheader">
-		<input type="text" name="q" size="21" maxlength="120" placeholder="Search Events">
-		<input type="submit" value="search">
-		<a href="/login"><input type="submit" value="Login or Create Account"></a>
-	</div>
-	
-	<div id="map"></div>
-	<a href="/create"><div><button id="newEvent" type="button" class="btn btn-default">New Event</button></div></a>
-	
-	
-	
-    <script>
-      function initMap() {
-	    var latLongTemp = {lat: 32.881263, lng: -117.237547};
-		
-        var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-          center: {lat: 32.881263, lng: -117.237547},
-          zoom: 16
-        });
-		
-		var infowindow = new google.maps.InfoWindow();
-		
-		var markerTemp = new google.maps.Marker({
-			map: map,
-			position: latLongTemp,
-			title: 'gruper Meeting'
-		});
-		
-		google.maps.event.addListener(markerTemp, 'click', function() {
-			infowindow.setContent('<div><strong>' + "gruper Meeting" + '</strong><br>' +
-			"2/2/2016 at 2pm" + '<br>' +
-			"Free" + '</div>' + '<input type="submit" value="View">');
-			infowindow.open(map, this);
-		});
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-        async defer></script>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   
   <script src="js/jquery-1.11.0.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/gruperScript.js"></script>
-</body>
+</center> </body>
 </html>
