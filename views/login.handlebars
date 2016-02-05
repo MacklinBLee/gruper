@@ -5,13 +5,16 @@
 	<title>gruper</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/css/gruper.css" rel="stylesheet">
 </head>
 
-<body>	
-
+<body>
+<div class="container">
 	<div class="jumbotron">
-		<h1>gruper</h1>
-		<p>Connect and Explore</p>
+		<center> <h1>gruper</h1> </center>
+		<center> <h3>Connect and Explore</h3></center>
 	</div>
 	<form id="login" role="form">
     <div class="form-group">
@@ -22,9 +25,9 @@
       <label for="description">Password:</label>
       <input type="password" class="form-control" id="description" placeholder="Password">
     </div>
-	<a href="/"><button id="submitBtn" type="button" class="btn btn-default">Login</button></a>
+	<center><a href="/"><button id="submitBtn" type="button" class="btn btn-default">Login</button></a></center>
 	
-	<div><h3>OR</h3></div>
+	<div><center><h3>OR</h3></center></div>
 	<div class="form-group">
       <label for="width">ID:</label>
       <input type="text" class="form-control" id="width" placeholder="ID">
@@ -41,11 +44,13 @@
       <label for="description">Re-Type Password:</label>
       <input type="password" class="form-control" id="description" placeholder="Re-Type Password">
     </div>
-	<a href="/"><button id="accountBtn" type="button" class="btn btn-default">Create Account</button></a>
+	<center><a href="/"><button id="accountBtn" type="button" class="btn btn-default">Create Account</button></a></center>
   </form>
   
   <div><h3>OR</h3></div>
-  <a href="/"><div><button id="accountSkip" type="button" class="btn btn-default">Continue As Guest</button></div></a>
+  <center><a href="/"><div><button id="accountSkip" type="button" class="btn btn-default">Continue As Guest</button></div></a></center>
+
+</div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="js/jquery-1.11.0.js"></script>

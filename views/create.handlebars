@@ -2,14 +2,13 @@
 
 <html>
 <head>
-<title>gruper</title> 
-<meta charset="utf-8">
+  <title>gruper</title> 
+  <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/css/gruper.css" rel="stylesheet">
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet"> 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
@@ -23,11 +22,14 @@
         $( "#datepicker2" ).datepicker();
     });
     </script>
-    <div class="jumbotron">
-      <h1>gruper</h1>
-    </div>
-	
-	<a href="/"><button id="back" class="btn btn-primary btn-lg">BACK</button></a>
+
+    <div class="container">
+      <div class="jumbotron">
+        <center> <h1>gruper</h1> 
+            <h3> Create Event </h3>
+          </center>
+
+      </div>
     <!-- <div class = "container">
       <div class = "jumbotron">-->
         <div class="form-group">
@@ -37,6 +39,7 @@
          <div class="date">
             <label for="Date">FROM: Date</label>
             <input type="text" id="datepicker1" placeholder="Date">
+          </br>
             <label for="Date">Time: Hour</label>
 
           <select name="hrs">
@@ -122,8 +125,10 @@
          </select>
         </div>
          <div class="date">
+          </br>
             <label for="Date">TO:    Date</label>
             <input type="text" id="datepicker2" placeholder="Date">
+            </br>
             <label for="Date">Time: Hour</label>
 
           <select name="hrs">
@@ -208,6 +213,7 @@
            <option value="PM">PM</option>
          </select>
         </div>
+        </br>
       <div class="form-group">
             <label for="title">Price:</label>
             <input type="text" class="form-control" id="price" placeholder="Price $$">
@@ -225,12 +231,20 @@
             <input type="text" class="form-control" id="capacity" placeholder="Number of people">
        </div>
       <div class="seats">
-        <a href="/"><button id="createevent" class="btn btn-primary btn-lg">Create Event</button></a>
+       
+       <center> 
+          <div>
+            <a href="/"><button id="createevent" class="btn btn-default">Create Event</button></a>
+        
+            <a href="/"><button id="back" class="btn btn-default">BACK</button></a>
+          </div>
+       </center>
+      
       </div>
             
      <!-- </div> -->
     </div>
-	
+	</div>
 	<script src="js/jquery-1.11.0.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/gruperScript.js"></script>
