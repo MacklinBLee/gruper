@@ -43,7 +43,7 @@
 		<div>
 			<a href="/create"> <button id="newEvent" type="button" class="btn btn-default">Create New Event</button></a>
 
-			<a href="/view"> <button id="viewEvent" type="button" class="btn btn-default">Events You've Joined</button></a>
+			<a href="/joined"> <button id="viewEvent" type="button" class="btn btn-default">Events You've Joined</button></a>
 		</div>
 		
 	    <script>
@@ -67,7 +67,7 @@
 			google.maps.event.addListener(markerTemp, 'click', function() {
 				infowindow.setContent('<div><strong>' + "gruper Meeting" + '</strong><br>' +
 				"2/2/2016 at 2pm" + '<br>' +
-				"Free" + '</div>' + '<input type="submit" value="View">');
+				"Free" + '</div>' + '<a href="/view"><input type="submit" value="View"></a>');
 				infowindow.open(map, this);
 			});
 	      }
