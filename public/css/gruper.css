@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5 {
 	color: #8382BF;
 }
 
+body {
+  background: url('http://www.pulsarmedia.eu/data/media/3/Clean%20Windows%208%20Pulsarmedia%20Wallpaper.jpg');
+}
+
 div.friend {
 	width: 300px;
 }
@@ -21,7 +25,12 @@ div.friend {
 height:50px;
 padding-top: 0;
 padding-bottom: 0;
+background-color: #003366;
+color: #FFFFFF;
+}
 
+.u_name {
+  color: #0033FF;
 }
 
 .alignleft {
@@ -41,12 +50,14 @@ padding-bottom: 0;
 }​
 
 .info {
-  display: none
+  display: none;
 }
 
 .thumbnail {
   margin-top: 20px;
   width: 1500px;
+  background: url('http://imagemonster.com/wp-content/uploads/2015/03/rev-extended.jpg');
+  color: white;
 }
 
 #create_back {
@@ -54,5 +65,5 @@ padding-bottom: 0;
 }
 
 #joined_back {
-  margin-left: 55px;
+  margin-left: 10px;
 }
