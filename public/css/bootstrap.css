@@ -5244,7 +5244,7 @@ a.list-group-item.active > .badge,
   border-radius: 6px;
 }
 
-.jumbotron .container {
+.jumbotron .container .thumbnail{
   max-width: 100%;
 }
 

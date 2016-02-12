@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>gruper-main</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/gruper.css" rel="stylesheet">
+
+</head>
+
+<body>	<center>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>gruper</h1>
+		</div>
+
+		<div class="container-fluid">
+  			<h1>Search Results</h1></center> 
+			<a href="/" class="btn btn-info btn-large" id = "joined_back"><i class="icon-white icon-chevron-left"></i> Back</a>  	
+			<center>		
+			{{#each events}}
+				<div> 
+				<a href="" class="thumbnail"> 
+
+					<p>{{title}}</p>
+
+					<div class = "info"> 
+						<p > Location: {{location}} </p>
+						<p > Description: {{description}} </p>
+						<p > Date: {{date1}} </p>
+						<p > Start Time: {{hrs1}}:{{minute1}} {{ampm1}} </p>
+						<p > End Time: {{hrs2}}:{{minute2}} {{ampm2}} </p>
+						<p > Capacity: {{capacity}} </p>
+					</div>
+
+					</a>
+				</div>					
+			{{/each}}
+				
+		</div>
+	</div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  
+  <script src="js/gruperScript.js"></script>
+  
+</center> 
+</body>
+</html>

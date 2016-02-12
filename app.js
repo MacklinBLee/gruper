@@ -14,6 +14,7 @@ var create = require('./routes/create');
 var joined = require('./routes/joined');
 var view = require('./routes/view');
 var jsonevents = require('./routes/jsonevents');
+var search = require('./routes/search');
 // Example route
 // var user = require('./routes/user');
 
@@ -47,6 +48,7 @@ app.get('/joined', joined.view);
 // app.get('/account', joined.view);
 app.get('/view', view.view);
 app.get('/jsonevents', jsonevents.view);
+app.get('/search', search.view);
 // Example route
 // app.get('/users', user.list);
 
