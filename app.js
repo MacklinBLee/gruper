@@ -12,7 +12,6 @@ var index = require('./routes/index');
 var login = require('./routes/login');
 var create = require('./routes/create');
 var joined = require('./routes/joined');
-var account = require('./routes/account');
 var view = require('./routes/view');
 var jsonevents = require('./routes/jsonevents');
 // Example route

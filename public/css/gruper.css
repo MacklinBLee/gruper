@@ -41,6 +41,18 @@ padding-bottom: 0;
 }​
 
 .info {
-  display: none;
-  text-align: right;
+  display: none
+}
+
+.thumbnail {
+  margin-top: 20px;
+  width: 1500px;
+}
+
+#create_back {
+
+}
+
+#joined_back {
+  margin-left: 55px;
 }
