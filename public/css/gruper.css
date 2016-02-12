@@ -39,3 +39,8 @@ padding-bottom: 0;
  width:33.33333%;
  text-align:right;
 }​
+
+.info {
+  display: none;
+  text-align: right;
+}
