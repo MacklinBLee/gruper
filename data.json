@@ -15,6 +15,12 @@
 			"description": "Team Meeting for gruper",
 			"capacity": "4"
 		}
-
+	],
+	"logindata" : [
+	{
+		"username":"Guest (Login/Create Event)",
+		"password":"password",
+		"linkhref":"login"
+			}
 	]
 }

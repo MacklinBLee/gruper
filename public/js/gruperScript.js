@@ -13,7 +13,8 @@ $(document).ready(function() {
 function initializePage() {
 	console.log("Javascript connected!");
 	$("a.thumbnail").click(eventClick);
-
+	var dataURL = "/data";
+	$.get(dataURL, changeLoginData);
 }
 
 // Function that adds JSON information on events when title is clicked
@@ -25,3 +26,12 @@ function eventClick(e) {
     var eventInfo = $(eventClicked).find(".info");
 	$(eventInfo).toggle();
 }
+
+function changeLoginData(result){
+console.log(result);
+console.log("entering clicked");
+    if(result.logindata[0].username == "Macklin (Logout)"){
+    $('#loginbuttons').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-default">Create New Event</button></a><a href="/joined"> <button id="viewEvent" type="button" class="btn btn-default">Events You&#39ve Created/Joined</button></a>');
+}
+}
+

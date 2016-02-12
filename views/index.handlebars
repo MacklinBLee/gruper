@@ -23,27 +23,28 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1>gruper</h1>
-		<a href="/joined"><p align="right"> Macklin Lee </p> </a>
+		{{#each logindata}}
+		<a href="{{linkhref}}"><p align="right">{{username}}</p> </a>
+         {{/each}}
+
 		</div>
 		
 		<div id="tfheader">
 			<input type="text" name="q" size="21" maxlength="120" placeholder="Search Events"></input>
 			<input type="submit" value="search"> </input>
 		</div>	
-			
-		<div>
-			<a href="/login"><input type="submit" value="Login or Create Account"></a>
-		</div>
 		</br>
 		
 		<div id="map"></div>
 		
 		</br>
 		
-		<div>
+		<div id="loginbuttons">
+<!--
 			<a href="/create"> <button id="newEvent" type="button" class="btn btn-default">Create New Event</button></a>
 
 			<a href="/joined"> <button id="viewEvent" type="button" class="btn btn-default">Events You've Joined</button></a>
+-->
 		</div>
 	</div> 
 

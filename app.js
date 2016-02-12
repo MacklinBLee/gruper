@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+var data = require('./routes/data');
 var index = require('./routes/index');
 var login = require('./routes/login');
 var create = require('./routes/create');
@@ -49,6 +50,7 @@ app.get('/joined', joined.view);
 app.get('/view', view.view);
 app.get('/jsonevents', jsonevents.view);
 app.get('/search', search.view);
+app.get('/data',data.data);
 // Example route
 // app.get('/users', user.list);
 
