@@ -44,7 +44,7 @@ app.get('/', index.view);
 app.get('/login', login.view);
 app.get('/create', create.view);
 app.get('/joined', joined.view);
-app.get('/account', account.view);
+// app.get('/account', joined.view);
 app.get('/view', view.view);
 app.get('/jsonevents', jsonevents.view);
 // Example route
