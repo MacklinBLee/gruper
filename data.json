@@ -14,7 +14,22 @@
 			"location": "geisel library",
 			"description": "Team Meeting for gruper",
 			"capacity": "4"
-		}
+		},
+		{
+			"title": "Tennis",
+			"date1": "2/10/2016",
+			"hrs1": "2",
+			"minute1": "00",
+			"ampm1": "PM",
+			"date2": "2/10/2016",
+			"hrs2": "3",
+			"minute2": "0",
+			"ampm2": "PM",
+			"price": "$20",
+			"location": "La Jolla",
+			"description": "Come join a doubles match at the La Jolla Tennis court",
+			"capacity": "4"
+		}		
 	],
 	"logindata" : [
 	{

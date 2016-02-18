@@ -102,6 +102,14 @@ function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, 
 		position: latLong,
 		title: title
 	});
+
+    // Keep the first event always open to improve interaction flow for the user
+	if(mIndex==0){
+		infoWindow.setContent('<div><strong>' + title + '</strong><br>' +
+		date1 + " at " + hrs1 + ":" + minute1 + ampm1 + '<br>' +
+		price + '</div>' + '<a href="/view"><input type="submit" value="View"></a>');
+        infoWindow.open(map, markerArray[0]);
+	}
 	
 	google.maps.event.addListener(markerArray[mIndex], 'click', function() {
 		infoWindow.setContent('<div><strong>' + title + '</strong><br>' +
