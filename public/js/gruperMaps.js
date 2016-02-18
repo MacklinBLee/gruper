@@ -4,6 +4,8 @@ var map;
 var infoWindow;
 var eventsArray = [];
 var currentEvent = 0;
+var markerArray = [];
+var mIndex = 0;
 
 function initMap() {
 	'use strict';
@@ -36,12 +38,47 @@ function initMap() {
 }
 
 function callback(result){
+	currentEvent = 0;
 	for(var i = 0; i < result.events.length; i++){
 		'use strict';
 		$.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + result.events[i].location +"&key=AIzaSyD8CaEXps9YVVP7RHVS8LvF6K7XaQi4vs4", latLongCallback);
 		var event = result.events[i];
 		eventsArray.push({title: event.title, date1: event.date1, hrs1:event.hrs1, minute1:event.minute1, ampm1:event.ampm1, price:event.price});
 	}
+}
+
+// Function that is called when submit button of search is clicked
+// It sets all markers on the map to 0 and deletes them
+function submit_btn(e){
+	console.log("Submit button clicked");
+	eventsArray = [];
+	for(var i = 0; i < markerArray.length; i++){
+		markerArray[i].setMap(null);
+	}
+    mIndex = 0;
+    markerArray = [];
+	$.get("/jsonevents", submitCallback);
+}
+
+// Data from JSON is accessed when the submit button of search is called.
+// This function also implements search. If a substring of the title is found
+// it shows the corresponding events
+function submitCallback(result){
+	currentEvent = 0;
+	for(var i = 0; i < result.events.length; i++){
+		'use strict';
+		var event = result.events[i];
+		var searchTitle = event.title.toLowerCase();
+		var searchSubs = document.getElementById("searchStr").value.toLowerCase();
+		var searchPos = searchTitle.search(searchSubs);
+		console.log(searchSubs);
+		console.log(searchPos);
+		if(searchPos >=0){
+		console.log("Event found!!");
+		eventsArray.push({title: event.title, date1: event.date1, hrs1:event.hrs1, minute1:event.minute1, ampm1:event.ampm1, price:event.price});
+	    $.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + result.events[i].location +"&key=AIzaSyD8CaEXps9YVVP7RHVS8LvF6K7XaQi4vs4", latLongCallback);
+	    }
+    }
 }
 
 function latLongCallback(result){
@@ -60,16 +97,20 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, price, latLong){
 	
-	var markerTemp = new google.maps.Marker({
+	 markerArray[mIndex] = new google.maps.Marker({
 		map: map,
 		position: latLong,
 		title: title
 	});
 	
-	google.maps.event.addListener(markerTemp, 'click', function() {
+	google.maps.event.addListener(markerArray[mIndex], 'click', function() {
 		infoWindow.setContent('<div><strong>' + title + '</strong><br>' +
 		date1 + " at " + hrs1 + ":" + minute1 + ampm1 + '<br>' +
 		price + '</div>' + '<a href="/view"><input type="submit" value="View"></a>');
 		infoWindow.open(map, this);
 	});
+
+	mIndex++;
 }
+
+

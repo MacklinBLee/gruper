@@ -15,6 +15,7 @@ function initializePage() {
 	$("a.thumbnail").click(eventClick);
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
+	$("#submit_button").click(submit_btn);
 }
 
 // Function that adds JSON information on events when title is clicked
