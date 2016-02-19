@@ -13,7 +13,10 @@
 			"price": "FREE",
 			"location": "geisel library",
 			"description": "Team Meeting for gruper",
-			"capacity": "4"
+			"capacity": "4",
+			"id":"gruper Meeting2/20/2016geisel library",
+			"lat":"32.8811083",
+			"lng":"-117.2375732"
 		},
 		{
 			"title": "Tennis",
@@ -28,7 +31,10 @@
 			"price": "$20",
 			"location": "La Jolla",
 			"description": "Come join a doubles match at the La Jolla Tennis court",
-			"capacity": "4"
+			"capacity": "4",
+			"id":"Tennis2/20/2016La Jolla",
+			"lat":"32.8328112",
+			"lng":"-117.2712717"
 		}		
 	],
 	"logindata" : [

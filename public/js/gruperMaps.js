@@ -48,9 +48,8 @@ function callback(result){
 	currentEvent = 0;
 	for(var i = 0; i < result.events.length; i++){
 		'use strict';
-		$.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + result.events[i].location +"&key=AIzaSyD8CaEXps9YVVP7RHVS8LvF6K7XaQi4vs4", latLongCallback);
 		var event = result.events[i];
-		eventsArray.push({title: event.title, date1: event.date1, hrs1:event.hrs1, minute1:event.minute1, ampm1:event.ampm1, price:event.price});
+		createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price, event.lat, event.lng);
 	}
 }
 
@@ -86,17 +85,9 @@ function submitCallback(result){
 		var endDate = $("#timeValue").val();
 		
 		if((searchPos>=0)&(diffDate>=0)&(diffDate<=endDate)){
-		eventsArray.push({title: event.title, date1: event.date1, hrs1:event.hrs1, minute1:event.minute1, ampm1:event.ampm1, price:event.price});
-	    $.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + result.events[i].location +"&key=AIzaSyD8CaEXps9YVVP7RHVS8LvF6K7XaQi4vs4", latLongCallback);
+			createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price, event.lat, event.lng);
 	    }
     }
-}
-
-function latLongCallback(result){
-	var event = eventsArray[currentEvent];
-	currentEvent++;
-	
-	createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price, result.results[0].geometry.location);
 }
   
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -106,11 +97,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 				'Error: Your browser doesn\'t support geolocation.');
 }
 
-function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, price, latLong){
+function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, price, lat, lng){
 	
 	 markerArray[mIndex] = new google.maps.Marker({
 		map: map,
-		position: latLong,
+		position: {lat: parseFloat(lat), lng: parseFloat(lng)},
 		title: title
 	});
 
