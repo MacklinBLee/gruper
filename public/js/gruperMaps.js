@@ -6,7 +6,14 @@ var eventsArray = [];
 var currentEvent = 0;
 var markerArray = [];
 var mIndex = 0;
-
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+var numTodayDate = mm*30 + dd;
+console.log(mm);
+console.log(dd);
+console.log(numTodayDate);
 function initMap() {
 	'use strict';
 	$.get("/jsonevents", callback);
@@ -68,13 +75,15 @@ function submitCallback(result){
 	for(var i = 0; i < result.events.length; i++){
 		'use strict';
 		var event = result.events[i];
+		var dateArray = event.date1.split("/");
+		console.log(dateArray)
 		var searchTitle = event.title.toLowerCase();
 		var searchSubs = document.getElementById("searchStr").value.toLowerCase();
 		var searchPos = searchTitle.search(searchSubs);
-		console.log(searchSubs);
-		console.log(searchPos);
-		if(searchPos >=0){
-		console.log("Event found!!");
+		var eventDate = new Date(dateArray[0],dateArray[1],dateArray[2]);
+		var numEventDate = parseInt(dateArray[0])*30 + parseInt(dateArray[1]);
+        var diffDate = numEventDate - numTodayDate;
+		if((searchPos>=0)&(diffDate>=0)&(diffDate<=3)){
 		eventsArray.push({title: event.title, date1: event.date1, hrs1:event.hrs1, minute1:event.minute1, ampm1:event.ampm1, price:event.price});
 	    $.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + result.events[i].location +"&key=AIzaSyD8CaEXps9YVVP7RHVS8LvF6K7XaQi4vs4", latLongCallback);
 	    }
