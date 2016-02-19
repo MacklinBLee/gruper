@@ -71,11 +71,15 @@
            <option value="AM">AM</option>
            <option value="PM" selected>PM</option>
          </select>
+		 
+		 <b>Till Whenever</b>
+		 <input type="checkbox" id="showDate2" checked></input>
         </div>
-         <div class="date">
+		 
+         <div class="date" id="date2">
           </br>
             <label for="Date">TO:    Date</label>
-            <input type="text" id="datepicker2" placeholder="Date" name="date2" required>
+            <input type="text" id="datepicker2" placeholder="Date" name="date2">
             </br>
             <label for="Date">Time: Hour</label>
 
@@ -107,9 +111,12 @@
          </select>
         </div>
         </br>
-      <div class="form-group">
+		
+	  <div><input type="checkbox" id="showPrice" checked><b>Free</b></input></div>
+	  
+      <div class="form-group" id="priceDiv">
             <label for="title">Price:</label>
-            <input type="text" class="form-control" id="price" placeholder="Price $$" name="price" required>
+            <input type="text" class="form-control" id="price" placeholder="Price $$" name="price">
         </div>
        <div class="form-group">
             <label for="title">Location:</label>
@@ -119,9 +126,12 @@
             <label for="title">Description:</label>
 		<textarea rows="5" class="form-control" id="Description" placeholder="Description" style="height: 100px;" name="description" required> </textarea>
       </div>
-       <div class="form-group">
+	  
+	  <div><input type="checkbox" id="showCapacity" checked><b>No Invite Limit</b></input></div>
+	  
+       <div class="form-group" id="inviteDiv">
             <label for="title">Number of people you wish to invite:</label>
-            <input type="text" class="form-control" id="capacity" placeholder="Number of people" name="capacity" required>
+            <input type="text" class="form-control" id="capacity" placeholder="Number of people" name="capacity">
        </div>
       <div class="seats">
        
@@ -141,6 +151,7 @@
 	<script src="js/jquery-1.11.0.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/gruperScript.js"></script>
+  <script src="js/createEventScript.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>

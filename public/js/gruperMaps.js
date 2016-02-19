@@ -83,7 +83,9 @@ function submitCallback(result){
 		var eventDate = new Date(dateArray[0],dateArray[1],dateArray[2]);
 		var numEventDate = parseInt(dateArray[0])*30 + parseInt(dateArray[1]);
         var diffDate = numEventDate - numTodayDate;
-		if((searchPos>=0)&(diffDate>=0)&(diffDate<=3)){
+		var endDate = $("#timeValue").val();
+		
+		if((searchPos>=0)&(diffDate>=0)&(diffDate<=endDate)){
 		eventsArray.push({title: event.title, date1: event.date1, hrs1:event.hrs1, minute1:event.minute1, ampm1:event.ampm1, price:event.price});
 	    $.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + result.events[i].location +"&key=AIzaSyD8CaEXps9YVVP7RHVS8LvF6K7XaQi4vs4", latLongCallback);
 	    }
