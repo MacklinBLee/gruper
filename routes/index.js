@@ -4,7 +4,7 @@ var data = require('../data.json');
 var newEvent;
 var newID;
 
-exports.view = function(req, res){
+exports.view = function(req, res){	
 	var price = "FREE";
 	if(req.query.price != ""){
 		price = req.query.price;
@@ -42,6 +42,24 @@ exports.view = function(req, res){
 		data["events"].push(newEvent);
 	}
 	
+	//If making a new user account, push them
+	if(req.query.email != null){
+		var newUser= {"username": req.query.username,
+			"password": req.query.password,
+			"linkhref":"login",
+			"currentusr":"1"
+		}
+
+		data["logindata"].push(newUser);
+	}
+	else if(req.query.password != null){
+		for(var j = 0; j < data.logindata.length; j++){
+			if(data.logindata[j].username == req.query.username && data.logindata[j].password == req.query.password){
+				data.logindata[j].currentusr = "1";
+			}
+		}
+	}
+
 	console.log(data);
 	res.render('index', data);
 };

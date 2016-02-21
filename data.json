@@ -38,10 +38,17 @@
 		}		
 	],
 	"logindata" : [
-	{
-		"username":"Guest (Login/Create Event)",
-		"password":"password",
-		"linkhref":"login"
-			}
+		{
+			"username":"Guest (Login/Create Event)",
+			"password":"password",
+			"linkhref":"login",
+			"currentusr":"0"
+		},
+		{
+			"username":"Bert",
+			"password":"1234",
+			"linkhref":"login",
+			"currentusr":"0"
+		}
 	]
 }

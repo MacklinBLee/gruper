@@ -2,25 +2,24 @@
 
 <html>
 <head>
-	<title>gruper</title>	
-	<meta charset="utf-8">
+  <title>gruper</title> 
+  <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.css" rel="stylesheet">
   <link href="/css/gruper.css" rel="stylesheet">
-  <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
+  <link href="/css/create.css" rel="stylesheet">
 </head>
-
 <body>
-<div class="container">
-	<div class="jumbotron">
-		<center> <h1>gruper</h1> </center>
-		<center> <h3>Connect and Explore</h3></center>
-	</div>
-  
-  <a href="/" class="btn btn-info btn-medium" id = "login_back">Back</a>
-  <div class="" id="loginModal">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>gruper</h1>   
+      </div>
+
+    <center> <h3> Login </h3>  </center>
+	  <a href="/" class="btn btn-info btn-large" id = "create_back">Continue As Guest</a>
+
+	<div class="" id="loginModal">
     <div class="modal-body">
       <div class="well">
         <ul class="nav nav-tabs">
@@ -28,61 +27,56 @@
           <li><a href="#create" data-toggle="tab">Create Account</a></li>
         </ul>
         <div id="myTabContent" class="tab-content">
-          <div class="tab-pane active in" id="login">
-            <form class="form-horizontal" action='' method="POST">
-              <fieldset>                 
-                <div class="control-group">
-                  <!-- Username -->
-                  <label class="control-label"  for="username">Username</label>
-                  <div class="controls">
-                    <input type="text" id="username" name="username" placeholder="" class="input-xlarge" required>
-                  </div>
-                </div>
-              
-              <div class="control-group">
-                <!-- Password-->
-                <label class="control-label" for="password">Password</label>
-                <div class="controls">
-                  <input type="password" id="password" name="password" placeholder="" class="input-xlarge" required>
-                </div>
-              </div>
-              
-              
-              <div class="control-group">
-                <!-- Button -->
-                <div class="controls">
-                  <center><a href="/" class="btn btn-info btn-medium" id = "loginButn">Login</a></center>
-                </div>
-              </div>
-            </fieldset>
-          </form>                
+        <div class="tab-pane active in" id="login">
+        <form id="loginForm" role="form" method="get" action="/">
+
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+			</div>
+			<div class="form-group" id="priceDiv">
+				<label for="password">Password:</label>
+				<input type="text" class="form-control" id="password" placeholder="Password" name="password" required>
+			</div>
+			<center> 
+				<div>
+				<a href="/" id="loginButton"><button id="login" class="btn btn-info btn-larg">Login</button></a>
+				</div>
+			</center>
+		</form>
         </div>
         <div class="tab-pane fade" id="create">
-          <form id="tab">
-            <label>Username</label>
-            <input type="text" value="" class="input-xlarge" required>
-            <label>First Name</label>
-            <input type="text" value="" class="input-xlarge" required>
-            <label>Last Name</label>
-            <input type="text" value="" class="input-xlarge" required>
-            <label>Email</label>
-            <input type="text" value="" class="input-xlarge" required>
-            <div>
-              <center>
-                <button class="btn btn-info btn-medium">Create Account</button>
-              </center>
-            </div>
-          </form>
+        <form id="loginForm" role="form" method="get" action="/">
+
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+			</div>
+			<div class="form-group" id="priceDiv">
+				<label for="password">Password:</label>
+				<input type="text" class="form-control" id="password" placeholder="Password" name="password" required>
+			</div>
+			<div class="form-group" id="priceDiv">
+				<label for="email">Email:</label>
+				<input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+			</div>
+			<center> 
+				<div>
+				<a href="/" id="loginButton"><button id="login" class="btn btn-info btn-larg">Login</button></a>
+				</div>
+			</center>
+		</form>
         </div>
       </div>
     </div>
   </div>
-
-  <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="js/jquery-1.11.0.js"></script>
+            
+     <!-- </div> -->
+    </div>
+	</div>
+	<script src="js/jquery-1.11.0.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="js/gruperScript.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
 </body>
-</html>
+</HTML>

@@ -29,11 +29,19 @@ function eventClick(e) {
 }
 
 function changeLoginData(result){
-console.log(result);
-console.log("entering clicked");
-    if(result.logindata[0].username == "Macklin (Logout)"){
-    $('#loginbuttons').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a> <a href="/joined"> </br> </br> <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Created/Joined</button></a>');
-}
+	console.log(result);
+	var resultFound = false;
+	for(var i = 1; i < result.logindata.length; i++){
+		if(result.logindata[i].currentusr == "1"){
+			document.getElementById("username").innerHTML = result.logindata[i].username + " (Logout)";
+			$('#loginbuttons').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a> <a href="/joined"> </br> </br> <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Created/Joined</button></a>');
+			
+			resultFound = true;
+		}
+	}
+	if(!resultFound){
+		document.getElementById("username").innerHTML = result.logindata[0].username;
+	}
 }
 
 function submit_btn(e){
