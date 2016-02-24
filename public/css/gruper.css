@@ -29,6 +29,16 @@ background-color: #003366;
 color: white;
 }
 
+.jumbotron h2{
+  float:left;
+  color: white;
+}
+
+.jumbotron p{
+  float:right;
+}
+
+
 .u_name {
   color: #003366;
 }
