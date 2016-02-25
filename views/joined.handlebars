@@ -22,11 +22,12 @@
   			<h3>Events Joined</h3></center> 
 			<a href="/" class="btn btn-info btn-large" id = "joined_back"><i class="icon-white icon-chevron-left"></i>Back</a>  
 			<center> <br>
-			{{#each events}}
+			{{#each joined_events}}
 				<div class ="event_box"> 
 				<a href="" class="thumbnail"> 
 
-					<p>{{title}}</p>
+
+					<b>{{title}}</b> 
 
 					<div class = "info"> 
 						<p > Location: {{location}} </p>
@@ -36,6 +37,8 @@
 						<p > End Time: {{hrs2}}:{{minute2}} {{ampm2}} </p>
 						<p > Capacity: {{capacity}} </p>
 					</div>
+
+					
 
 					</a>
 				</div>					

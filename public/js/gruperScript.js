@@ -5,7 +5,57 @@
 $(document).ready(function() {
 	initializePage();
 	$(".info").toggle();
+		var join_event = $('#join_this');
+		join_event.click(function(){		
+			// AJAX request
+			$.get("/data", addEvent);
+
+
+	});
 });
+
+/*
+ * Add event to current user account
+ */
+function addEvent(result){
+	// for join function -> event information		
+	var title = $('#title').text();
+	var date1 = $('#date1').text();
+	var hrs1 = $('#hrs1').text();
+	var minute1 = $('#minute1').text();
+	var ampm1 = $('#ampm1').text();
+	var price = $('#price').text();
+	var location = $('#location').text();
+	var description = $('#description').text();
+	var capacity = $('#capacity').text();
+	var id = $('#id').text();
+	var lat = $('#lat').text();
+	var lng = $('#lng').text();
+
+	// find current user
+	var curr;
+	for(var i = 0; i < result["logindata"].length; i++){
+		// if current user then assign to curr
+		if(result["logindata"][i].currentusr == "1")
+			curr = result["logindata"][i];
+	}
+	console.log("curr: " + curr.username);
+	// Add event that was joined to user array joined_events in JSON file
+	curr["joined_events"].push({
+								"title":title,
+								"price":price,
+								"location":location,
+								"description":description,
+								"capacity":capacity
+								});
+	console.log("joined: " + curr["joined_events"][0]["title"]);
+	console.log("joined: " + curr["joined_events"][1]["title"]);
+	console.log("joined: " + curr["joined_events"][2]["title"]);
+
+	console.log("joined: " + result["logindata"][1]["joined_events"][0]["title"]);
+	console.log("joined: " + result["logindata"][1]["joined_events"][1]["title"]);
+	console.log("joined: " + result["logindata"][1]["joined_events"][2]["title"]);
+}
 
 /*
  * Function that is called when the document is ready.

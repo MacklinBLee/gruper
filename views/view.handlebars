@@ -26,16 +26,20 @@
 				<div> 
 				<a href="" class="thumbnail"> 
 
-					<p>{{title}}</p>
+					<div class = "info_shown">
+						<b id="title">{{title}}</b> 
+						<input type="button" value="join" id="join_this" />
+					</div>
 
 					<div class = "info"> 
-						<p > Location: {{location}} </p>
-						<p > Description: {{description}} </p>
-						<p > Date: {{date1}} </p>
-						<p > Start Time: {{hrs1}}:{{minute1}} {{ampm1}} </p>
-						<p > End Time: {{hrs2}}:{{minute2}} {{ampm2}} </p>
-						<p > Capacity: {{capacity}} </p>
+						<p> Location: <div id ="location">{{location}}</div></p>
+						<p> Description: <div id ="description">{{description}}</div></p>
+						<p> Date: <div id ="date1">{{date1}}</div></p>
+						<p> Start Time: <div id ="hrs1">{{hrs1}}</div>:<div id ="minute1">{{minute1}}</div> <div id ="ampm1">{{ampm1}}</div> </p>
+						<p> End Time: <div id ="hrs2">{{hrs2}}</div>:<div id ="minute2">{{minute2}}</div> <div id ="ampm2">{{ampm2}}</div> </p>
+						<p> Capacity: <div id ="capacity">{{capacity}}</div> </p>
 					</div>
+
 
 					</a>
 				</div>					

@@ -47,7 +47,8 @@ exports.view = function(req, res){
 		var newUser= {"username": req.query.username,
 			"password": req.query.password,
 			"linkhref":"login",
-			"currentusr":"1"
+			"currentusr":"1",
+			"joined_events":[]
 		}
 
 		data["logindata"].push(newUser);
