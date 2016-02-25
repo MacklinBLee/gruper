@@ -29,7 +29,7 @@
         <div class="searchTime">
             <label for="searchTime">Find events happening within:</label>
           <select name="timeToSearch" id="timeValue">
-		   <option value="1" selected>Today</option>
+		   <option value="0" selected>Today</option>
            <option value="3">3 days</option>
            <option value="7">1 week</option>
            <option value="14">2 weeks</option>
@@ -40,7 +40,9 @@
 			<input type="text" name="q" size="21" maxlength="120" id="searchStr" placeholder="Search Events"></input>
 			<input type="submit" value="search" class="btn btn-info btn-large" id="submit_button"> </input>
 		</div>	
-		</br>
+		<div class="searchError">
+			<p></p>
+		</div>
 		
 		<div id="map"></div>
 		

@@ -38,6 +38,9 @@ color: white;
   float:right;
 }
 
+.searchError{
+  color:red;
+}
 
 .u_name {
   color: #003366;

@@ -70,7 +70,9 @@ function submit_btn(e){
 // This function also implements search. If a substring of the title is found
 // it shows the corresponding events
 function submitCallback(result){
+    $(".searchError p").text("");
 	currentEvent = 0;
+	var eventFound = 0;
 	for(var i = 0; i < result.events.length; i++){
 		'use strict';
 		var event = result.events[i];
@@ -83,10 +85,14 @@ function submitCallback(result){
 		var numEventDate = parseInt(dateArray[0])*30 + parseInt(dateArray[1]);
         var diffDate = numEventDate - numTodayDate;
 		var endDate = $("#timeValue").val();
-		
+		console.log(diffDate);
 		if((searchPos>=0)&(diffDate>=0)&(diffDate<=endDate)){
+			eventFound = 1;
 			createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price, event.lat, event.lng);
 	    }
+    }
+    if(eventFound == 0){
+    	$(".searchError p").text("No events found for given search.");
     }
 }
   
