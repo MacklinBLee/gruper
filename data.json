@@ -51,41 +51,11 @@
 			"currentusr":"0",
 			"joined_events" : [
 			{
-			"title": "Video Game Tournament",
-			"date1": "2/20/2016",
-			"hrs1": "2",
-			"minute1": "00",
-			"ampm1": "PM",
-			"date2": "2/30/2016",
-			"hrs2": "3",
-			"minute2": "00",
-			"ampm2": "PM",
-			"price": "FREE",
-			"location": "UCSD",
-			"description": "Tourney for games",
-			"capacity": "2",
-			"id":"gruper Meeting2/20/2016geisel library",
-			"lat":"32.8811083",
-			"lng":"-117.2375732"
-		},
-		{
-			"title": "Cooking Contest",
-			"date1": "2/20/2016",
-			"hrs1": "2",
-			"minute1": "00",
-			"ampm1": "PM",
-			"date2": "2/30/2016",
-			"hrs2": "3",
-			"minute2": "00",
-			"ampm2": "PM",
-			"price": "$10",
-			"location": "SDSU",
-			"description": "contest for cooks",
-			"capacity": "40",
-			"id":"Tennis2/20/2016La Jolla",
-			"lat":"32.8328112",
-			"lng":"-117.2712717"
-		}		
+			"id":"Video Game Tournament2/20/2016UCSD"
+			},
+			{
+			"id":"Cooking Contest2/20/2016SDSU"
+			}		
 
 			]
 		}

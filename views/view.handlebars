@@ -16,6 +16,7 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h2>gruper</h2>
+			<a href="/login" ><p style="color:#00ffdd" align="right" class = "u_name" id = "username">temp Text</p> </a>
 		</div>
 
 		<div class="container-fluid">
@@ -28,7 +29,7 @@
 
 					<div class = "info_shown">
 						<b id="title">{{title}}</b> 
-						<input type="button" value="join" id="join_this" />
+						<input type="button" value="join" id="join_this" class="join_class" />
 					</div>
 
 					<div class = "info"> 
@@ -38,6 +39,8 @@
 						<p class = "info_four"> Start Time: <div id ="hrs1">{{hrs1}}</div>:<div id ="minute1">{{minute1}}</div> <div id ="ampm1">{{ampm1}}</div> </p>
 						<p class ="info_five"> End Time: <div id ="hrs2">{{hrs2}}</div>:<div id ="minute2">{{minute2}}</div> <div id ="ampm2">{{ampm2}}</div> </p>
 						<p class ="info_six"> Capacity: <div id ="capacity">{{capacity}}</div> </p>
+						
+						<!--<a href="/" id="createEventButton"><button id="join_this" class="join_class" class="btn btn-info btn-larg">Join</button></a>-->
 					</div>
 
 
@@ -46,6 +49,9 @@
 			{{/each}}
 				
 		</div>
+		
+		<!--<input type="text" class="form-control" id="location" placeholder="Location" name="location" required>
+		<a href="/" id="createEventButton"><button id="join_this" class="join_class" class="btn btn-info btn-larg">Join</button></a>-->
 	</div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -53,7 +59,7 @@
   <script src="js/bootstrap.js"></script>
 
   
-  <script src="js/gruperScript.js"></script>
+  <script src="js/joinEventScript.js"></script>
   
 </center> 
 </body>
