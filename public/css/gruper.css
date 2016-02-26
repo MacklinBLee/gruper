@@ -22,19 +22,19 @@ div.friend {
 }
 
 .jumbotron {
-height: 50px;
+height: 40px;
 padding-top: 0;
 padding-bottom: 0;
 background-color: #003366;
 color: white;
 }
 
-.jumbotron h2{
+.gruper {
   float:left;
   color: white;
 }
 
-.jumbotron p{
+.u_name p{
   float:right;
 }
 
