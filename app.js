@@ -54,7 +54,7 @@ app.get('/search', search.view);
 app.get('/data', data.data);
 
 // post request to write to JSON file CHANGE HERE
-app.post('/data', view.view);
+app.post('/view', view.view);
 
 // JSON that holds login user information
 app.get('/logindata',logindata.view);

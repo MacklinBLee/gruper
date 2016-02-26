@@ -69,8 +69,9 @@ function addEvent(result){
 	for(var i = 0; i < result["logindata"].length; i++){
 		// if current user then assign to curr
 		if(result["logindata"][i].currentusr == "1"){
-			result["logindata"][i]["joined_events"].push({"id":currentEventId});
-			console.log(result["logindata"][i]);
+			//result["logindata"][i]["joined_events"].push({"id":currentEventId});
+			//console.log(result["logindata"][i]);
+			$.post('/view', { 'id': currentEventId, 'user':result["logindata"][i] });
 		}
 	}
 }
