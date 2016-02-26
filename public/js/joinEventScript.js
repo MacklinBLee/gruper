@@ -18,14 +18,13 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
-	//document.getElementById("hiddenID").style.display = 'none';
 	$("a.thumbnail").click(eventClick);
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
+	$.get(dataURL, hideJoinedEvents);
 }
 
 function changeLoginData(result){
-	console.log(result);
 	var resultFound = false;
 	for(var i = 1; i < result.logindata.length; i++){
 		if(result.logindata[i].currentusr == "1"){
@@ -37,7 +36,33 @@ function changeLoginData(result){
 	}
 	if(!resultFound){
 		document.getElementById("username").innerHTML = result.logindata[0].username;
+		//Don't let guests join events
+		$(".join_class").toggle();
 	}
+}
+
+function hideJoinedEvents(result){
+	console.log(result);
+	var joined_events_temp;
+	for(var i = 1; i < result.logindata.length; i++){
+		if(result.logindata[i].currentusr == "1"){
+			joined_events_temp = result.logindata[i].joined_events;
+		}
+	}
+	
+	var joined_events = [];
+	for(var eventObj in joined_events_temp){
+		joined_events.push(joined_events_temp[eventObj].id);
+	}
+	
+	console.log(joined_events);
+	$(".thumbnail").each(function(){
+		console.log(getIDFromHTML(this));
+		console.log(getIDFromHTML(this)+" at "+joined_events.indexOf(getIDFromHTML(this)));
+		if(joined_events.indexOf(getIDFromHTML(this)) != -1){
+			console.log($(this).find(".join_class").toggle());
+		}
+	});
 }
 
 // Function that adds JSON information on events when title is clicked
@@ -51,11 +76,15 @@ function eventClick(e) {
 	
 	
 	var htmlResult = eventClicked[0];
-	var title = $($(htmlResult).find("#title")[0]).html();
-	var date = $($(htmlResult).find("#date1")[0]).html();
-	var location = $($(htmlResult).find("#location")[0]).html();
-	currentEventId = title+date+location;
-	console.log(title+date+location);
+	currentEventId = getIDFromHTML(htmlResult);
+	console.log(currentEventId);
+}
+
+function getIDFromHTML(htmlString){
+	var title = $($(htmlString).find("#title")[0]).html();
+	var date = $($(htmlString).find("#date1")[0]).html();
+	var location = $($(htmlString).find("#location")[0]).html();
+	return title+date+location;
 }
 
 /*
@@ -69,9 +98,7 @@ function addEvent(result){
 	for(var i = 0; i < result["logindata"].length; i++){
 		// if current user then assign to curr
 		if(result["logindata"][i].currentusr == "1"){
-			//result["logindata"][i]["joined_events"].push({"id":currentEventId});
-			//console.log(result["logindata"][i]);
-			$.post('/view', { 'id': currentEventId, 'user':result["logindata"][i] });
+			$.post('/view', { 'id': currentEventId, 'user':result["logindata"][i].username });
 		}
 	}
 }
