@@ -2,6 +2,10 @@
 
 <html>
 <head>
+	{{> createExperiment}}
+	{{> joinExperiment}}
+	{{> timeOnHome}}
+	
 	<title>gruper-main</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +26,17 @@
 <body>	<center>
 	<div class="container">
 		<div class="jumbotron">
+			
+
+		{{#if alt}}
 			<p class="gruper">gruper</p>
 			<a href="/login" ><p style="color:#00ffdd" align="right" class = "u_name" id = "username">temp Text</p> </a>
+				
+		{{else}}
+			<h1>gruper</h1>
+			<a href="/login"><p align="right" class = "u_name" id = "username">temp Text</p> </a>
+		{{/if}}
+
 		</div>
 		
         <div class="searchTime">
@@ -47,8 +60,12 @@
 		<div id="map"></div>
 		
 		</br>
-		
-		<div id="loginbuttons">
+
+		{{#if alt}}
+			<div id="loginbuttonsalt">
+		{{else}}
+			<div id="loginbuttons">
+		{{/if}}
 <!--
 			<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a>
 
@@ -64,6 +81,6 @@
   <script src="js/gruperMaps.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
   <script src="https://code.jquery.com/jquery.js"></script>
-  
+  {{> googleAnalytics}}
 </center> </body>
 </html>

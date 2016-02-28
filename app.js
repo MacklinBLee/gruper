@@ -53,6 +53,8 @@ app.get('/jsonevents', jsonevents.view);
 app.get('/search', search.view);
 app.get('/data', data.data);
 
+app.get('/alt', index.viewAlt);
+
 // post request to write to JSON file CHANGE HERE
 app.post('/view', view.view);
 
