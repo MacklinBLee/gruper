@@ -14,9 +14,10 @@
 			"location": "geisel library",
 			"description": "Team Meeting for gruper",
 			"capacity": "4",
-			"id":"gruper Meeting2/20/2016geisel library",
+			"id":"gruper Meeting2/26/2016geisel library",
 			"lat":"32.8811083",
-			"lng":"-117.2375732"
+			"lng":"-117.2375732",
+			"host":"Bert"
 		},
 		{
 			"title": "Tennis",
@@ -32,9 +33,10 @@
 			"location": "La Jolla",
 			"description": "Come join a doubles match at the La Jolla Tennis court",
 			"capacity": "4",
-			"id":"Tennis2/20/2016La Jolla",
+			"id":"Tennis2/26/2016La Jolla",
 			"lat":"32.8328112",
-			"lng":"-117.2712717"
+			"lng":"-117.2712717",
+			"host":"Bert"
 		}		
 	],
 	"logindata" : [
@@ -51,12 +53,8 @@
 			"currentusr":"0",
 			"joined_events" : [
 			{
-			"id":"Video Game Tournament2/20/2016UCSD"
-			},
-			{
-			"id":"Cooking Contest2/20/2016SDSU"
-			}		
-
+			"id":"gruper Meeting2/26/2016geisel library"
+			}
 			]
 		}
 	]
