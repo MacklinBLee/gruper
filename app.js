@@ -48,7 +48,7 @@ app.get('/login', login.view);
 app.get('/create', create.view);
 app.get('/joined', joined.view);
 // app.get('/account', joined.view);
-app.get('/view', view.view);
+app.get('/view/:id', view.view);
 app.get('/jsonevents', jsonevents.view);
 app.get('/search', search.view);
 app.get('/data', data.data);
@@ -56,7 +56,7 @@ app.get('/data', data.data);
 app.get('/alt', index.viewAlt);
 
 // post request to write to JSON file CHANGE HERE
-app.post('/view', view.view);
+//app.post('/view', view.view);
 
 // JSON that holds login user information
 app.get('/logindata',logindata.view);
