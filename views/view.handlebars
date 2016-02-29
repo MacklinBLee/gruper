@@ -17,6 +17,7 @@
 	<center>
 		<div class="jumbotron">
 			<p class="gruper">gruper</p>
+			<a href="/login" ><p style="color:#00ffdd" align="right" class = "u_name" id = "username">temp Text</p> </a>
 		</div>
 
 		<div class="container-fluid">
@@ -25,26 +26,34 @@
 			<center>	<br>
 				<div> 
 				<a href="" class="thumbnail"> 
+					<div class = "info_shown">
+						<b id="title">{{title}}</b> 
+						<input type="button" value="join" id="join_this" class="join_class" />
+					</div>
+					<div class = "info"> 
+
 						<b id="title">{{eventTitle}}</b> <br><br>
-						<p class ="info_one"> Location: {{eventLocation}}</p><br>
-						<p class = "info_two"> Description: {{eventDescription}}</p>
+						<p class ="info_one"> Location: <div id ="location">{{eventLocation}}</div></p>
+						<p class = "info_two"> Description: <div id ="description">{{eventDescription}}</div></p>
 						<p class = "info_eight"> Price: {{eventPrice}}</p>
-						<p class = "info_three"> Date: {{eventDate1}}</p><br>
-						<p class = "info_four"> Start Time: {{eventHrs1}}:{{eventMinute1}}{{eventAmpm1}} </p><br>
-						<p class ="info_five"> End Time: {{eventHrs2}}:{{eventMinute2}}{{eventAmpm2}} </p><br>
-						<p class ="info_six"> Capacity: {{eventCapacity}} </p>
+						<p class = "info_three"> Date: <div id ="date1">{{eventDate1}}</div><p>
+						<p class = "info_four"> Start Time: <div id ="hrs1">{{eventHrs1}}</div>:<div id ="minute1">{{eventMinute1}}</div> <div id ="ampm1">{{evenAmpm1}}</div> </p>
+						<p class ="info_five"> End Time: <div id ="hrs2">{{eventHrs2}}</div>:<div id ="minute2">{{eventMinute2}}</div> <div id ="ampm2">{{eventAmpm2}}</div> </p>
+						<p class ="info_six"> Capacity: <div id ="capacity">{{eventCapacity}}</div> </p>
 					    <p class ="info_seven"> Host: {{eventHost}} </p>
-                        <a href="#"><button id="joinevent" class="btn btn-info btn-larg">Join</button></a>
+                        <a href="/"><button id="joinevent" class="btn btn-info btn-larg">Join</button></a>
+                    </div>
 					</a>
 				</div>	
 				
 		</div>
+	</center> 
+
 	</div>
  
-</center> 
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="js/jquery-1.11.0.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/gruperScript.js"></script>
+  <script src="../js/jquery-1.11.0.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/gruperScript.js"></script>
 </body>
 </html>
