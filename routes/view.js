@@ -1,7 +1,7 @@
 var data = require("../data.json");
 
 exports.view = function(req, res){
-/*
+
 	console.log("view viewed: " + req.body.user);
 	console.log("view viewed: " + req.body.id);
 	
@@ -10,7 +10,7 @@ exports.view = function(req, res){
 			data.logindata[i].joined_events.push({'id':req.body.id});
 		}
 	}
-*/
+
 	var id = req.params.id;
 
 	for(var i = 0; i < data.events.length; i++){
