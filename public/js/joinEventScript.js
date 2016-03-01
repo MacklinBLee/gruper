@@ -5,11 +5,12 @@ var currentEventId;
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	$(".info").toggle();
+	//$(".info").toggle();
 	//var join_event = $('#join_this');
 	$('.join_class').click(function(){		
 		// AJAX request
 		$.get("/data", addEvent);
+		console.log("Join clicked");
 	});
 });
 
@@ -17,7 +18,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	console.log("Javascript connected!");
+	console.log("Javascript connected!!!");
 	$("a.thumbnail").click(eventClick);
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
@@ -99,7 +100,7 @@ function addEvent(result){
 	for(var i = 0; i < result["logindata"].length; i++){
 		// if current user then assign to curr
 		if(result["logindata"][i].currentusr == "1"){
-			$.post('/view', { 'id': currentEventId, 'user':result["logindata"][i].username });
+			$.post('/view/:id', { 'id': currentEventId, 'user':result["logindata"][i].username });
 		}
 	}
 }

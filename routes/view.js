@@ -33,6 +33,7 @@ exports.view = function(req, res){
 	}
  
 	console.log("The ID is "+id);
+	
 	res.render('view',{
 		'eventID':id,
 		'eventTitle': title,
