@@ -2,11 +2,11 @@
 	"events": [
 		{
 			"title": "gruperMeeting",
-			"date1": "2/26/2016",
+			"date1": "3/01/2016",
 			"hrs1": "2",
 			"minute1": "00",
 			"ampm1": "PM",
-			"date2": "2/30/2016",
+			"date2": "3/20/2016",
 			"hrs2": "3",
 			"minute2": "00",
 			"ampm2": "PM",
@@ -21,11 +21,11 @@
 		},
 		{
 			"title": "Tennis",
-			"date1": "2/26/2016",
+			"date1": "3/01/2016",
 			"hrs1": "2",
 			"minute1": "00",
 			"ampm1": "PM",
-			"date2": "2/30/2016",
+			"date2": "3/20/2016",
 			"hrs2": "3",
 			"minute2": "00",
 			"ampm2": "PM",

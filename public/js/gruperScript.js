@@ -19,7 +19,7 @@ function initializePage() {
 	console.log("Javascript connected!");
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
-	// $("#submit_button").click(submit_btn);
+    $("#submit_button").click(submit_btn);
 	$('#viewEvent').click(viewEvents);
 	$('#newEvent').click(addEvents);
 	$("a.thumbnail").click(eventClick);
