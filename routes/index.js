@@ -20,7 +20,7 @@ exports.view = function(req, res){
 		if(data.logindata[i].currentusr == 1){
 			// Holds the username for the current user
 			host_usrname = data.logindata[i].username;
-		}
+		
 			// Automatically join the event that you create
 			if(newID !== null && newID != "empty") {
 				for(var j = 0; j < data.logindata[i].joined_events.length; j++){
@@ -29,6 +29,7 @@ exports.view = function(req, res){
 						repeatFlag = true;
 						break;
 					}
+			}
 				
 			// No repeat IDs added to JSON array joined_events
 			console.log(repeatFlag);
