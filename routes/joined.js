@@ -1,7 +1,6 @@
 var data = require("../data.json");
 
 exports.view = function(req, res){
-	console.log(data);
 	console.log("joined viewed");
 	var users = data["logindata"];
 	var curr;
@@ -11,5 +10,6 @@ exports.view = function(req, res){
 			curr = users[i];
 	}
 	console.log(curr);
+
 	res.render('joined', curr);
 };

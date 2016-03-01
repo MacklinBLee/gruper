@@ -10,7 +10,6 @@ $(document).ready(function() {
 	$('.join_class').click(function(){		
 		// AJAX request
 		$.get("/data", addEvent);
-		console.log("Join clicked");
 	});
 });
 
@@ -18,7 +17,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	console.log("Javascript connected!!!");
+	console.log("Javascript connected!");
 	$("a.thumbnail").click(eventClick);
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
@@ -57,7 +56,7 @@ function hideJoinedEvents(result){
 		joined_events.push(joined_events_temp[eventObj].id);
 	}
 	
-	console.log(joined_events);
+	console.log(this);
 	$(".thumbnail").each(function(){
 		console.log(getIDFromHTML(this));
 		console.log(getIDFromHTML(this)+" at "+joined_events.indexOf(getIDFromHTML(this)));
@@ -76,7 +75,6 @@ function eventClick(e) {
     var eventInfo = $(eventClicked).find(".info");
 	$(eventInfo).toggle();
 	
-	
 	var htmlResult = eventClicked[0];
 	currentEventId = getIDFromHTML(htmlResult);
 	console.log(currentEventId);
@@ -84,7 +82,8 @@ function eventClick(e) {
 
 function getIDFromHTML(htmlString){
 	var title = $($(htmlString).find("#title")[0]).html();
-	var date = $($(htmlString).find("#date1")[0]).html();
+	//console.log($(htmlString).find("#title"));
+	var date = '&'
 	var location = $($(htmlString).find("#location")[0]).html();
 	return title+date+location;
 }
@@ -93,7 +92,7 @@ function getIDFromHTML(htmlString){
  * Add event to current user account
  */
 function addEvent(result){
-	console.log("HIT ID = "+currentEventId);
+	console.log("HIT ID = "+currentEventId)
 
 	// find current user
 	var curr;

@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"title": "gruper Meeting",
+			"title": "gruperMeeting",
 			"date1": "2/26/2016",
 			"hrs1": "2",
 			"minute1": "00",
@@ -11,10 +11,10 @@
 			"minute2": "00",
 			"ampm2": "PM",
 			"price": "FREE",
-			"location": "geisel library",
+			"location": "UCSD",
 			"description": "Team Meeting for gruper",
 			"capacity": "4",
-			"id":"gruperMeeting",
+			"id":"gruperMeeting&UCSD",
 			"lat":"32.8811083",
 			"lng":"-117.2375732",
 			"host":"Bert"
@@ -30,10 +30,10 @@
 			"minute2": "00",
 			"ampm2": "PM",
 			"price": "$20",
-			"location": "La Jolla",
+			"location": "SDSU",
 			"description": "Come join a doubles match at the La Jolla Tennis court",
 			"capacity": "4",
-			"id":"Tennis",
+			"id":"Tennis&SDSU",
 			"lat":"32.8328112",
 			"lng":"-117.2712717",
 			"host":"Bert"
@@ -53,7 +53,10 @@
 			"currentusr":"0",
 			"joined_events" : [
 			{
-			"id":"gruper Meeting2/26/2016geisel library"
+			"id":"gruperMeeting&UCSD"
+			},
+			{
+			"id":"Tennis&SDSU"
 			}
 			]
 		}

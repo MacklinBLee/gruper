@@ -12,22 +12,37 @@
 
 </head>
 
-<body>	<center>
+<body
 	<div class="container">
 		<div class="jumbotron">
 			<p class="gruper">gruper</p>
 		</div>
 
 		<div class="container-fluid">
-  			<h3>Events Joined</h3></center> 
-			<a href="/" class="btn btn-info btn-large" id = "joined_back"><i class="icon-white icon-chevron-left"></i>Back</a>  
-			<center> <br>
-			{{#each joined_events}}
-			<div class ="event_box"> 
-				<a href="" class="thumbnail"> 
+  			<h3>Events</h3>
+			<a href="/" class="btn btn-info btn-large" id = "joined_back"><i class="icon-white icon-chevron-left"></i>Back</a><br>
+	
+			<h3>Events you created</h3>
+    		<div class ="events_hosted"></div>
 
 
-					<b>{{title}}</b> 
+			<h3>Events you have joined</h3> 
+			<div class ="events_joined"></div>
+				
+		</div>
+	</div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script src="js/gruperScript.js"></script>
+</body>
+</html>
+
+<!-- <a href="" class="thumbnail"> 
+
+					<b>test {{title}}</b> 
 
 					<div class = "info"> 
 						<p > Location: {{location}} </p>
@@ -37,23 +52,4 @@
 						<p > End Time: {{hrs2}}:{{minute2}} {{ampm2}} </p>
 						<p > Capacity: {{capacity}} </p>
 					</div>
-
-					
-
-					</a>
-			</div>					
-			{{/each}}
-				
-		</div>
-	</div>
-
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="js/jquery-1.11.0.js"></script>
-  <script src="js/bootstrap.js"></script>
-
-  
-  <script src="js/gruperScript.js"></script>
-  
-</center> 
-</body>
-</html>
+					</a> -->

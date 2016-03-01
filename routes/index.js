@@ -13,13 +13,14 @@ exports.view = function(req, res){
 
 	// Unique ID for the event
 	if(typeof req.query.title!= 'undefined' && typeof req.query.date1!= 'undefined' && typeof req.query.location!= 'undefined')
-		newID = req.query.title+req.query.date1+req.query.location;
+		newID = req.query.title+'&'+req.query.location;
 	
 	// Find current user and get username to make them host of event
 	for(var i = 0; i < data.logindata.length; i++){
 		if(data.logindata[i].currentusr == 1){
 			// Holds the username for the current user
 			host_usrname = data.logindata[i].username;
+		}
 			// Automatically join the event that you create
 			if(newID !== null && newID != "empty") {
 				for(var j = 0; j < data.logindata[i].joined_events.length; j++){
@@ -28,7 +29,7 @@ exports.view = function(req, res){
 						repeatFlag = true;
 						break;
 					}
-				}
+				
 			// No repeat IDs added to JSON array joined_events
 			console.log(repeatFlag);
 			if(!repeatFlag)	{			
@@ -42,8 +43,7 @@ exports.view = function(req, res){
 	
 	// reset value of flag
 	repeatFlag = false;
-	// reset 
-	newID = "empty";
+
 
 	newEvent= {"title": req.query.title,
 			"date1": req.query.date1,
@@ -64,15 +64,22 @@ exports.view = function(req, res){
 			"host": host_usrname
 	}
 
+	// reset 
+	newID = "empty";
+
 		
 	// Event with same ID cannot get created
 	var isRepeat = false;
 	for(var i = 0; i < data.events.length; i++){
-		if(newID == data.events[i].id){
+		if(newID == data.events[i].id && newID != "empty"){
+			console.log(newID);
+			console.log(data.events[i].id);
 			isRepeat = true;
 		}
 	}
 	
+	console.log(req.query.title);
+	console.log(isRepeat);
 	if(req.query.title != null && !isRepeat){
 		data["events"].push(newEvent);
 	}

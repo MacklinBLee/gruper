@@ -49,7 +49,7 @@ function callback(result){
 	for(var i = 0; i < result.events.length; i++){
 		'use strict';
 		var event = result.events[i];
-		createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price,event.id, event.lat, event.lng);
+		createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price, event.id, event.lat, event.lng);
 	}
 }
 
@@ -88,7 +88,7 @@ function submitCallback(result){
 		console.log(diffDate);
 		if((searchPos>=0)&(diffDate>=0)&(diffDate<=endDate)){
 			eventFound = 1;
-			createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price,event.id, event.lat, event.lng);
+			createEventMarker(map, infoWindow, event.title, event.date1, event.hrs1, event.minute1, event.ampm1, event.price, event.id, event.lat, event.lng);
 	    }
     }
     if(eventFound == 0){
@@ -103,16 +103,17 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 				'Error: Your browser doesn\'t support geolocation.');
 }
 
-function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, price,id, lat, lng){
+function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, price, id, lat, lng){
 	
 	 markerArray[mIndex] = new google.maps.Marker({
 		map: map,
 		position: {lat: parseFloat(lat), lng: parseFloat(lng)},
 		title: title
 	});
-	//var hrefView = '<a href=/view/gruper><input type="submit" value="View"></a>';
-	var hrefView = '<a href=/view/'+id+'><input type="submit" value="View"></a>';
-    console.log(hrefView);
+
+	 var hrefView = '<a href=/view/'+id+'><input type="submit" value="View"></a>';
+	 console.log(id);
+
     // Keep the first event always open to improve interaction flow for the user
 	if(mIndex==0){
 		infoWindow.setContent('<div><strong>' + title + '</strong><br>' +
@@ -130,5 +131,3 @@ function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, 
 
 	mIndex++;
 }
-
-
