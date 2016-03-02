@@ -1,5 +1,4 @@
 var data = require("../data.json");
-var title;
 
 exports.view = function(req, res){
 	console.log("view viewed: " + req.body.user);
@@ -17,7 +16,7 @@ exports.view = function(req, res){
 		console.log("events: " + data.events[i].title);
 		console.log("The ID is "+ id);
  	if(id == data.events[i].id){
- 		title = data.events[i].title;
+ 		var title = data.events[i].title;
      	var date1 = data.events[i].date1;
    		var hrs1 =data.events[i].hrs1;
  		var minute1 = data.events[i].minute1;
