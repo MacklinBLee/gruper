@@ -28,7 +28,7 @@
 
 					<div class = "info_shown">
 						<b id="title">{{eventTitle}}</b> <br><br>
-						<input type="button" value="join" id="join_this" class="join_class" />
+						<input type="button" value="join" id="join_this" class="join_class"onclick="window.location.reload()" />
 					</div>
 
 					<div class = "info"> 
@@ -40,6 +40,9 @@
  						<p class ="info_five"> End Time: {{eventHrs2}}:{{eventMinute2}}{{eventAmpm2}} </p><br>
  						<p class ="info_six"> Capacity: {{eventCapacity}} </p>
  					    <p class ="info_seven"> Host: {{eventHost}} </p>
+ 					    <p class ="info_eight"><div id="lat">{{eventLat}}</div></p>
+ 					    <p class ="info_nine"><div id="lng">{{eventLng}}</div> </p>
+
 					</div>
 
 

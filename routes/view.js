@@ -30,6 +30,8 @@ exports.view = function(req, res){
  		var description =data.events[i].description;
  		var capacity = data.events[i].capacity;
  		var host = data.events[i].host;
+ 		var lat = data.events[i].lat;
+ 		var lng = data.events[i].lng;
 
  	}
  	}
@@ -50,7 +52,8 @@ exports.view = function(req, res){
  		'eventLocation':location,
  		'eventDescription':description,
  		'eventCapacity':capacity,
- 		'eventHost':host
+ 		'eventHost':host,
+ 		'eventLat':lat,
+ 		'eventLng':lng
  	});
- 	//res.render('view', data);
 };

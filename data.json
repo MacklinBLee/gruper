@@ -2,7 +2,7 @@
 	"events": [
 		{
 			"title": "gruperMeeting",
-			"date1": "3/01/2016",
+			"date1": "3/04/2016",
 			"hrs1": "2",
 			"minute1": "00",
 			"ampm1": "PM",
@@ -14,14 +14,14 @@
 			"location": "UCSD",
 			"description": "Team Meeting for gruper",
 			"capacity": "4",
-			"id":"gruperMeeting&UCSD",
+			"id":"32.8811083&-117.2375732",
 			"lat":"32.8811083",
 			"lng":"-117.2375732",
 			"host":"Bert"
 		},
 		{
 			"title": "Tennis",
-			"date1": "3/01/2016",
+			"date1": "3/04/2016",
 			"hrs1": "2",
 			"minute1": "00",
 			"ampm1": "PM",
@@ -33,7 +33,7 @@
 			"location": "SDSU",
 			"description": "Come join a doubles match at the La Jolla Tennis court",
 			"capacity": "4",
-			"id":"Tennis&SDSU",
+			"id":"32.8328112&-117.2712717",
 			"lat":"32.8328112",
 			"lng":"-117.2712717",
 			"host":"Bert"
@@ -53,10 +53,10 @@
 			"currentusr":"0",
 			"joined_events" : [
 			{
-			"id":"gruperMeeting&UCSD"
+			"id":"32.8811083&-117.2375732"
 			},
 			{
-			"id":"Tennis&SDSU"
+			"id":"32.8328112&-117.2712717"
 			}
 			]
 		}

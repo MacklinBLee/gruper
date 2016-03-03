@@ -90,3 +90,8 @@ color: white;
 .info{
   
 }
+
+#lat, #lng{
+  display: none;
+}
+

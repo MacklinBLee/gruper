@@ -5,8 +5,6 @@ var currentEventId;
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	//$(".info").toggle();
-	//var join_event = $('#join_this');
 	$('.join_class').click(function(){		
 		// AJAX request
 		$.get("/data", addEvent);
@@ -29,8 +27,8 @@ function changeLoginData(result){
 	for(var i = 1; i < result.logindata.length; i++){
 		if(result.logindata[i].currentusr == "1"){
 			document.getElementById("username").innerHTML = result.logindata[i].username + " (Logout)";
-			$('#loginbuttonsalt').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a> <a href="/joined">  <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Joined</button></a>');
-			$('#loginbuttons').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a> <a href="/joined"> </br> </br> <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Created/Joined</button></a>');
+			$('#loginbuttonsalt').html('<button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button> <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Joined</button>');
+			$('#loginbuttons').html(' <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button>  </br> </br> <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Created/Joined</button>');
 			
 			resultFound = true;
 		}
@@ -77,15 +75,15 @@ function eventClick(e) {
 	
 	var htmlResult = eventClicked[0];
 	currentEventId = getIDFromHTML(htmlResult);
-	console.log(currentEventId);
+	console.log("id from html: " + currentEventId);
 }
 
 function getIDFromHTML(htmlString){
-	var title = $($(htmlString).find("#title")[0]).html();
-	//console.log($(htmlString).find("#title"));
-	var date = '&'
-	var location = $($(htmlString).find("#location")[0]).html();
-	return title+date+location;
+	var lat = $($(htmlString).find("#lat")[0]).html();
+	console.log($(htmlString).find("#lat"));
+	var amp = '&'
+	var lng = $($(htmlString).find("#lng")[0]).html();
+	return lat+amp+lng;
 }
 
 /*

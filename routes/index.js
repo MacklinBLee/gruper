@@ -13,34 +13,36 @@ exports.view = function(req, res){
 
 	// Unique ID for the event
 	if(typeof req.query.title!= 'undefined' && typeof req.query.date1!= 'undefined' && typeof req.query.location!= 'undefined')
-		newID = req.query.title+'&'+req.query.location;
+		newID = req.query.hiddenlat+'&'+req.query.hiddenlng;
 	
 	// Find current user and get username to make them host of event
-	for(var i = 0; i < data.logindata.length; i++){
-		if(data.logindata[i].currentusr == 1){
-			// Holds the username for the current user
-			host_usrname = data.logindata[i].username;
-		
+	for(var i = 1; i < data.logindata.length; i++){
 			// Automatically join the event that you create
 			if(newID !== null && newID != "empty") {
 				for(var j = 0; j < data.logindata[i].joined_events.length; j++){
-					console.log(repeatFlag);
+					console.log("repeat: " + repeatFlag);
 					if(data.logindata[i].joined_events[j].id == newID){
 						repeatFlag = true;
 						break;
 					}
+				}
 			}
-				
-			// No repeat IDs added to JSON array joined_events
-			console.log(repeatFlag);
-			if(!repeatFlag)	{			
-				data.logindata[i].joined_events.push({"id":newID});
-			}
+	}
 
-			break;
+	// Holds the username for the current user
+	for(var i = 1; i < data.logindata.length; i++){
+		if(data.logindata[i].currentusr == 1){
+			host_usrname = data.logindata[i].username;
+			// No repeat IDs added to JSON array joined_events
+			console.log("END: " + repeatFlag);
+			if(!repeatFlag && newID != "empty")	{		
+				console.log("Pushed to joined events");
+				data.logindata[i].joined_events.push({"id":newID});
 			}
 		}
 	}
+	
+			
 	
 	// reset value of flag
 	repeatFlag = false;
@@ -66,10 +68,11 @@ exports.view = function(req, res){
 	}
 
 	// reset 
-	newID = "empty";
+	//newID = "empty";
 
 		
 	// Event with same ID cannot get created
+	console.log("PUSH NEW EVENT");
 	var isRepeat = false;
 	for(var i = 0; i < data.events.length; i++){
 		if(newID == data.events[i].id && newID != "empty"){
@@ -79,9 +82,8 @@ exports.view = function(req, res){
 		}
 	}
 	
-	console.log(req.query.title);
 	console.log(isRepeat);
-	if(req.query.title != null && !isRepeat){
+	if(req.query.title != null && !isRepeat && host_usrname != null){
 		data["events"].push(newEvent);
 	}
 	
