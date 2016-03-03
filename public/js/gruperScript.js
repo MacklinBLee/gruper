@@ -30,6 +30,18 @@ $(document).ready(function() {
 		// Send an analytics event when button "Create New Event" is clicked
 		ga("send", "event", "newEvent", "click");		
 	});
+
+	// Google Analytics when look at events button is clicked
+	$('#loginbuttonsalt').on('click', '#newEvent' , function() {
+		// Send an analytics event when button "Create New Event" is clicked
+		ga("send", "event", "newEvent", "click");		
+	});
+
+	// Google Analytics when look at events button is clicked
+	$('#loginbuttonsalt').on('click', '#newEvent' , function() {
+		// Send an analytics event when button "Create New Event" is clicked
+		ga("send", "event", "newEvent", "click");		
+	});
 });
 
 
