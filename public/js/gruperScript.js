@@ -19,29 +19,29 @@ $(document).ready(function() {
 	$.get("/data", unjoinEvent);
 	});
 
-	// Google Analytics when create event button is clicked
+	// Google Analytics when joined events button is clicked
 	$('#loginbuttons').on('click', '#viewEvent' , function() {
 		// Send an analytics event when button "Events you've Created/Joined is clicked"
 		ga("send", "event", "viewEvent", "click");		
 	});
 
 	// Google Analytics when look at events button is clicked
-	$('#loginbuttons').on('click', '#newEvent' , function() {
+	/*$('#loginbuttons').on('click', '#newEvent' , function() {
 		// Send an analytics event when button "Create New Event" is clicked
 		ga("send", "event", "newEvent", "click");		
+	});*/
+
+	// Google Analytics when joined events button is clicked
+	$('#loginbuttonsalt').on('click', '#viewEvent' , function() {
+		// Send an analytics event when button "Create New Event" is clicked
+		ga("send", "event", "viewEvent", "click");		
 	});
 
 	// Google Analytics when look at events button is clicked
-	$('#loginbuttonsalt').on('click', '#newEvent' , function() {
+	/*$('#loginbuttonsalt').on('click', '#newEvent' , function() {
 		// Send an analytics event when button "Create New Event" is clicked
 		ga("send", "event", "newEvent", "click");		
-	});
-
-	// Google Analytics when look at events button is clicked
-	$('#loginbuttonsalt').on('click', '#newEvent' , function() {
-		// Send an analytics event when button "Create New Event" is clicked
-		ga("send", "event", "newEvent", "click");		
-	});
+	});*/
 });
 
 
