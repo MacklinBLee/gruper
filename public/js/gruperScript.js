@@ -20,8 +20,8 @@ function initializePage() {
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
     $("#submit_button").click(submit_btn);
-	$('#viewEvent').click(viewEvents);
-	$('#newEvent').click(addEvents);
+	$("#viewEvent").click( ga("send", "event", "viewEvent", "click") );
+	$("#newEvent").click( ga("send", "event", "newEvent", "click") );
 	$("a.thumbnail").click(eventClick);
 }
 
@@ -73,17 +73,19 @@ function displayEvents(result) {
 	}
 }
 
-
+/*
 function viewEvents(e) {
 	// send an Analytics event
+	console.log("Joined Events Pressed!");
 	ga("send", "event", "viewEvent", "click");
 }
 
 function addEvents(e) {
 	// send an Analytics event
+	console.log("Add Events Pressed!");
 	ga("send", "event", "newEvent", "click");
 }
-
+*/
 function changeLoginData(result){
 	console.log(result);
 	var resultFound = false;
