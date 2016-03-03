@@ -20,8 +20,19 @@ function initializePage() {
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
     $("#submit_button").click(submit_btn);
-	$("#viewEvent").click( ga("send", "event", "viewEvent", "click") );
-	$("#newEvent").click( ga("send", "event", "newEvent", "click") );
+	//$("#viewEvent").click( ga("send", "event", "viewEvent", "click") );
+	//$("#newEvent").click( ga("send", "event", "newEvent", "click") );
+	
+	$('.loginbuttonsalt').on('click', '.viewEvent' , function() {
+		alert("asd");
+		ga("send", "event", "viewEvent", "click");
+	});
+
+	$('.loginbuttons').on('click', '.viewEvent' , function() {
+		alert("asd");
+		ga("send", "event", "viewEvent", "click");
+	});
+
 	$("a.thumbnail").click(eventClick);
 }
 
