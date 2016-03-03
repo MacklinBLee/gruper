@@ -10,6 +10,11 @@ exports.view = function(req, res){
 	if(req.query.price != ""){
 		price = req.query.price;
 	}
+	
+	var capacity = "No Limit";
+	if(req.query.capacity != ""){
+		capacity = req.query.capacity;
+	}
 
 	// Unique ID for the event
 	if(typeof req.query.title!= 'undefined' && typeof req.query.date1!= 'undefined' && typeof req.query.location!= 'undefined')
@@ -60,7 +65,7 @@ exports.view = function(req, res){
 			"price": price,
 			"location": req.query.location,
 			"description": req.query.description,
-			"capacity": req.query.capacity,
+			"capacity": capacity,
 			"lat": req.query.hiddenlat,
 			"lng": req.query.hiddenlng,
 			"id": newID,
