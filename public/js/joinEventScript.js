@@ -71,7 +71,7 @@ function eventClick(e) {
     // In an event listener, $(this) is the element that fired the event    
  	var eventClicked = $(this).closest(".thumbnail");
     var eventInfo = $(eventClicked).find(".info");
-	$(eventInfo).toggle();
+	//$(eventInfo).toggle();
 	
 	var htmlResult = eventClicked[0];
 	currentEventId = getIDFromHTML(htmlResult);

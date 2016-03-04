@@ -121,6 +121,7 @@ function eventClick(e) {
  	var eventClicked = $(this).closest(".thumbnail");
     var eventInfo = $(eventClicked).find(".info");
 	$(eventInfo).toggle();
+	console.log("TOGGLING");
 	
 
 }
