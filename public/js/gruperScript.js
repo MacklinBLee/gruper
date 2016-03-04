@@ -70,7 +70,6 @@ function displayEvents(result) {
 			break;
 		}
 	}
-console.log("Hi");
 	// current user name
 	if (user_info != "") {
 		user = user_info.username;
