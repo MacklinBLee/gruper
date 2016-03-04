@@ -123,16 +123,7 @@ exports.view = function(req, res){
 
 	console.log(data);
 
-	//res.render('index', data);
-	var random_num = Math.random();
-	console.log(random_num);
-
-	if (random_num >= 0.0) {
-	  data['alt'] = false;
-	  res.render('index', data);
-	} else {
-	  res.redirect('/alt');
-	}
+	res.redirect('/alt');
 
 
 
