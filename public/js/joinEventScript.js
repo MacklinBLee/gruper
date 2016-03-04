@@ -5,7 +5,7 @@ var currentEventId;
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	$('#join_this').click(function(){		
+	$('.join_class').click(function(){		
 		// AJAX request
 		$.get("/data", addEvent);
 	});
@@ -36,7 +36,7 @@ function changeLoginData(result){
 	if(!resultFound){
 		document.getElementById("username").innerHTML = result.logindata[0].username;
 		//Don't let guests join events
-		$("#join_this").toggle();
+		$(".join_class").toggle();
 	}
 }
 
@@ -59,7 +59,7 @@ function hideJoinedEvents(result){
 		console.log(getIDFromHTML(this));
 		console.log(getIDFromHTML(this)+" at "+joined_events.indexOf(getIDFromHTML(this)));
 		if(joined_events.indexOf(getIDFromHTML(this)) != -1){
-			console.log($(this).find("#join_this").toggle());
+			console.log($(this).find(".join_class").toggle());
 		}
 	});
 }
