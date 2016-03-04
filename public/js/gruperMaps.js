@@ -111,7 +111,7 @@ function createEventMarker(map, infoWindow, title, date1, hrs1, minute1, ampm1, 
 		title: title
 	});
 
-	 var hrefView = '<a href=/view/'+ lat + '&'+ lng + '><input type="submit" value="View"></a>';
+	 var hrefView = '<a href=/view/'+ lat + '&'+ lng + '><input class="btn btn-info btn-sm" type="submit" value="View"></a>';
 	 console.log(id);
 
     // Keep the first event always open to improve interaction flow for the user
