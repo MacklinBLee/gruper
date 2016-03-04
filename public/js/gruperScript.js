@@ -91,7 +91,7 @@ function displayEvents(result) {
 			}
 		}
 	}
-	}
+	}" "
 }
 
 function changeLoginData(result){
@@ -101,7 +101,7 @@ function changeLoginData(result){
 		if(result.logindata[i].currentusr == "1"){
 			document.getElementById("username").innerHTML = result.logindata[i].username + " (Logout)";
 
-			$('#loginbuttonsalt').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a> <a href="/joined">  <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Joined</button></a>');
+			$('#loginbuttonsalt').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a> <a href="/joined">&nbsp <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Joined</button></a>');
 			$('#loginbuttons').html('<a href="/create"> <button id="newEvent" type="button" class="btn btn-info btn-large">Create New Event</button></a> <a href="/joined"> </br> </br> <button id="viewEvent" type="button" class="btn btn-info btn-large">Events You&#39ve Created/Joined</button></a>');
 			
 			resultFound = true;
