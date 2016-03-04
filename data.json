@@ -41,7 +41,7 @@
 	],
 	"logindata" : [
 		{
-			"username":"Guest (Login/Create Event)",
+			"username":"Login/Sign Up",
 			"password":"password",
 			"linkhref":"login",
 			"currentusr":"0"

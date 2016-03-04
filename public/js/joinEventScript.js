@@ -5,7 +5,7 @@ var currentEventId;
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	$('.join_class').click(function(){		
+	$('#join_this').click(function(){		
 		// AJAX request
 		$.get("/data", addEvent);
 	});
@@ -36,7 +36,7 @@ function changeLoginData(result){
 	if(!resultFound){
 		document.getElementById("username").innerHTML = result.logindata[0].username;
 		//Don't let guests join events
-		$(".join_class").toggle();
+		$("#join_this").toggle();
 	}
 }
 
@@ -59,7 +59,7 @@ function hideJoinedEvents(result){
 		console.log(getIDFromHTML(this));
 		console.log(getIDFromHTML(this)+" at "+joined_events.indexOf(getIDFromHTML(this)));
 		if(joined_events.indexOf(getIDFromHTML(this)) != -1){
-			console.log($(this).find(".join_class").toggle());
+			console.log($(this).find("#join_this").toggle());
 		}
 	});
 }
@@ -71,7 +71,7 @@ function eventClick(e) {
     // In an event listener, $(this) is the element that fired the event    
  	var eventClicked = $(this).closest(".thumbnail");
     var eventInfo = $(eventClicked).find(".info");
-	$(eventInfo).toggle();
+	//$(eventInfo).toggle();
 	
 	var htmlResult = eventClicked[0];
 	currentEventId = getIDFromHTML(htmlResult);
