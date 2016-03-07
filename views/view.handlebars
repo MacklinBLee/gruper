@@ -23,26 +23,30 @@
   			<h3>View Event</h3></center> 
 			<a href="/" class="btn btn-info btn-large" id = "joined_back"><i class="icon-white icon-chevron-left"></i> Back</a>  	
 			<center>	<br>
-		
-				<a href="" class="thumbnail"> 
+		<div class = "panel panel-info"> 
+				<div class="test panel-heading"> 
 
 					<div class = "info_shown">
-						<b id="title">{{eventTitle}}</b> <br><br>
-						<input type="button" value="join" id="join_this" class="join_class"onclick="window.location.reload()" />
+						<b id="title" class="text-info"><h3>{{eventTitle}}</h3></b>
+						
 					</div>
 
 					<div class = "info"> 
-						<p class ="info_one">Location: {{eventLocation}}</div></p><br>
- 						<p class = "info_two"> Description: {{eventDescription}}</p>
- 						<p class = "info_eight"> Price: {{eventPrice}}</p>
- 						<p class = "info_three"> Date: {{eventDate1}}</p><br>
- 						<p class = "info_four"> Start Time: {{eventHrs1}}:{{eventMinute1}}{{eventAmpm1}} </p><br>
- 						<p class ="info_five"> End Time: {{eventHrs2}}:{{eventMinute2}}{{eventAmpm2}} </p><br>
- 						<p class ="info_six"> Capacity: {{eventCapacity}} </p>
- 					    <p class ="info_seven"> Host: {{eventHost}} </p>
+						<p class ="info_one"><b>Location:</b> {{eventLocation}}</p><br>
+ 						<p class = "info_two"><b>Description:</b> {{eventDescription}}</p><br>
+ 						<p class = "info_eight"><b>Price:</b> {{eventPrice}}</p><br>
+ 						<p class = "info_three"><b>Date:</b> {{eventDate1}}</p><br>
+ 						<p class = "info_four"><b>Start Time: </b>{{eventHrs1}}:{{eventMinute1}}{{eventAmpm1}} </p><br>
+ 						<p class ="info_five"><b> End Time:</b> {{eventHrs2}}:{{eventMinute2}}{{eventAmpm2}} </p><br>
+ 						<p class ="info_six"><b>Capacity: </b>{{eventCapacity}} </p><br>
+ 					    <p class ="info_seven"><b>Host: </b>{{eventHost}} </p>
  					    <p class ="info_eight"><div id="lat">{{eventLat}}</div></p>
  					    <p class ="info_nine"><div id="lng">{{eventLng}}</div> </p>
 					</div>
+					<input type="button" value="join" id="join_this" class="btn btn-success join_class"onclick="window.location.reload()" />
+				</div> 
+			</div> 
+		</div>
 
 
 					</a>

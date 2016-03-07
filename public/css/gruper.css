@@ -79,17 +79,16 @@ color: white;
   margin-right: 0px;
 }
 
-.info_one, .info_two, .info_three, .info_four, .info_five, .info_six{
+.info_one, .info_two, .info_three, .info_four, .info_five, .info_six, .info_seven, .info_eight{
   display: inline-block;
+
+  
 }
 
 #location, #description, #date1, #hrs1, #minute1, #ampm1, #hrs2, #minute2, #ampm2, #capacity{
   display: inline;
 }
 
-.info{
-  
-}
 
 #lat, #lng{
   display: none;

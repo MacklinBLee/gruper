@@ -16,7 +16,7 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
-	$("a.thumbnail").click(eventClick);
+	$(".test").click(eventClick);
 	var dataURL = "/data";
 	$.get(dataURL, changeLoginData);
 	$.get(dataURL, hideJoinedEvents);
@@ -55,7 +55,7 @@ function hideJoinedEvents(result){
 	}
 	
 	console.log(this);
-	$(".thumbnail").each(function(){
+	$(".test").each(function(){
 		console.log(getIDFromHTML(this));
 		console.log(getIDFromHTML(this)+" at "+joined_events.indexOf(getIDFromHTML(this)));
 		if(joined_events.indexOf(getIDFromHTML(this)) != -1){
@@ -69,7 +69,7 @@ function eventClick(e) {
 	// Cancel the default action, which prevents the page from reloading
 	e.preventDefault();
     // In an event listener, $(this) is the element that fired the event    
- 	var eventClicked = $(this).closest(".thumbnail");
+ 	var eventClicked = $(this).closest(".test");
     var eventInfo = $(eventClicked).find(".info");
 	//$(eventInfo).toggle();
 	
