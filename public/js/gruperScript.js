@@ -79,19 +79,17 @@ function displayEvents(result) {
 		for(var j = 0; j < result.events.length; j++){
 			// Find events that the current user is the host of 
 			if(user_info.joined_events[i].id == result.events[j].id && user == result.events[j].host){
-				$(".events_hosted").append('<div class="panel panel-info"><div class="panel-heading"><div class="row"><div class="col-xs-6">' +
-					result.events[j].title + '</div>' + '<div class="col-xs-2">' +
-					'<div class="col-xs-2"><input class="btn btn-danger delete_button" type="button" value="delete" onclick="window.location.reload()"/></div>' + '</div>'+ '</div></div>');
+				$(".events_hosted").append('<div class="panel panel-info"><div class="panel-heading"><div class="row"><div class="col-xs-6">' + '<a href="/view/' + result.events[j].lat + '&' + result.events[j].lng + '">' + result.events[j].title + '</a></div>' + '<div class="col-xs-2">' + '<div class="col-xs-2"><input class="btn btn-danger delete_button" type="button" value="delete" onclick="window.location.reload()"/></div>' + '</div>'+ '</div></div>');
 			}
 
 			// Find events that the current user has joined and is not the host of
 			else if(user_info.joined_events[i].id == result.events[j].id){
-				$(".events_joined").append('<div class="panel panel-info"><div class="panel-heading"><div class="row"><div class="col-xs-6 unjoin_this">'+result.events[j].title+'</div>' + '<div class="col-xs-2"><input type="button" value="unjoin" class="btn btn-warning unjoin_button" onclick="window.location.reload()"/></div>' +
+				$(".events_joined").append('<div class="panel panel-info"><div class="panel-heading"><div class="row"><div class="col-xs-6 unjoin_this">' + '<a href="/view/' + result.events[j].lat + '&' + result.events[j].lng + '">' + result.events[j].title + '</a>'  + '</div>' + '<div class="col-xs-2"><input type="button" value="unjoin" class="btn btn-warning unjoin_button" onclick="window.location.reload()"/></div>' +
 				 	'</div>'+ '</div></div>');
 			}
 		}
 	}
-	}" "
+	}
 }
 
 function changeLoginData(result){
